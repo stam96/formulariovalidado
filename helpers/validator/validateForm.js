@@ -15,7 +15,8 @@ const validateCategory = [
     .escape(),
     body("correo", "LLenar campo correo")
     .isEmail()
-    .normalizeEmail(),
+    .normalizeEmail()
+    .withMessage("Debe ser correo válido"),
     body("comentario", "Ingresar comentario")
     .isLength({min:5})
     .withMessage("Comentario debe contener al menos 5 carácteres")
