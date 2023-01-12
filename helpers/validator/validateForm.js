@@ -7,7 +7,7 @@ const validateCategory = [
     .escape(),
     body("celular", "LLenar campo celular debe ser datos númericos")
     .isNumeric()
-    .isLength({min:10})
+    .isLength({min:10, max:10})
     .withMessage("Debe ser mínimo 10 digitos")
     .not()
     .isEmpty()
