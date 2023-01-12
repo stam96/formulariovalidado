@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors"
 import * as dotenv from 'dotenv' 
 dotenv.config()
 import { db } from "../db/databaseMongo.js";
@@ -16,6 +17,7 @@ export class Server {
   }
 
   middleware(){
+    this.app.use(cors())
     this.app.use(express.json())
   };
 
