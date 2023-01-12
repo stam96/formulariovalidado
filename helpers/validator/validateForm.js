@@ -5,7 +5,8 @@ const validateCategory = [
     .isEmpty()
     .trim()
     .escape(),
-    body("celular", "LLenar campo celular")
+    body("celular", "LLenar campo celular debe ser datos númericos")
+    .isNumeric()
     .isLength({min:10})
     .withMessage("Debe ser mínimo 10 digitos")
     .not()
@@ -17,7 +18,7 @@ const validateCategory = [
     .normalizeEmail(),
     body("comentario", "Ingresar comentario")
     .isLength({min:5})
-    .withMessage("Debe contener al menos 6 carácteres")
+    .withMessage("Comentario debe contener al menos 5 carácteres")
 
 ];
 export {

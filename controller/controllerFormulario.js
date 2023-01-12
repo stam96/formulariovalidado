@@ -14,9 +14,7 @@ export const crearComentario = async (req = request, res = response) => {
     await formulario.save();
     await sendMail(formulario);
     return res.status(200).json({
-      msg: "Creando formulario",
-      formulario,
-    });
+      msg: "Respuesta enviada correctamente"});
   } catch (error) {
     return res.status(505).json({ msg: "error de servidor" });
   }
